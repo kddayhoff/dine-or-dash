@@ -30,7 +30,7 @@ export default function Footer() {
   return (
     <>
     <footer className={classes.root}>
-    <Typography className={classes.footer}>ACHIEVE 2 BELIEVE<Copyright  style={{fontSize: 14}}/> 2020</Typography>
+    <Typography className={classes.footer}>Dine Or Dash<Copyright  style={{fontSize: 14}}/> 2020</Typography>
     </footer>
     </>
   );

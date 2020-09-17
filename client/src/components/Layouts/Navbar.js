@@ -56,7 +56,7 @@ const logout = () => {
       <AppBar className={classes.nav} position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link style={{ textDecoration: 'none' }} to ={"/dashboard"}><Button className={classes.btn1}>Achieve 2 Believe</Button></Link>
+            <Link style={{ textDecoration: 'none' }} to ={"/dashboard"}><Button className={classes.btn1}>Dine or Dash</Button></Link>
           </Typography>
           <Link style={{ textDecoration: 'none' }} to="/">
           <Button className={classes.btns}>Log In</Button></Link>

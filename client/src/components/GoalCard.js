@@ -51,7 +51,8 @@ export default function GoalCard(props) {
 				</Typography>
 			</CardContent>
 			<CardActions>
-				<Button size='small'>Edit Goal</Button>
+				<Button size='small'>Edit Menu</Button>
+				<Button size='small'>Dash Menu</Button>
 				<FormControl component='fieldset'>
 					<FormGroup aria-label='position' row>
 						<FormControlLabel
@@ -59,7 +60,7 @@ export default function GoalCard(props) {
 							control={<Checkbox 
 								color='primary'/>}
 								// onChange={this.handleChange} />}
-							label='Goal Achieved'
+							label=''
 							labelPlacement='end'
 						/>
 					</FormGroup>

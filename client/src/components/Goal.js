@@ -77,17 +77,17 @@ export default function Goal(props) {
 					className={classes.title}
 					color='textSecondary'
 					gutterBottom>
-					Create your Goal
+					Dine or Dash?
 				</Typography>
 				<div className={classes.body}>
 					<form>
 						<Typography variant='h5' component='h2'>
 							<FormControl variant='outlined'>
-								<InputLabel htmlFor='component-outlined'>goal</InputLabel>
+								<InputLabel htmlFor='component-outlined'>Restaurant</InputLabel>
 								<OutlinedInput
 									id='component-outlined'
 									onChange={(e) => setGoal(e.target.value)}
-									label='goal'
+									label='restaurant'
 								/>
 							</FormControl>
 						</Typography>
@@ -95,39 +95,35 @@ export default function Goal(props) {
 					<form>
 						<Typography variant='h5' component='h2'>
 							<FormControl variant='outlined'>
-								<InputLabel htmlFor='component-outlined'>task</InputLabel>
+								<InputLabel htmlFor='component-outlined'>Food Item</InputLabel>
 								<OutlinedInput
 									id='component-outlined'
 									onChange={(e) => setTask(e.target.value)}
-									label='task'
+									label='food item'
 								/>
 							</FormControl>
 						</Typography>
 					</form>
 
 					<br></br>
-
-					<TextField
-						id='datetime-local'
-						label='goal date'
-						type='datetime-local'
-						defaultValue={Date.now}
-						className={classes.textField}
-						onChange={(e) => setDate(e.target.value)}
-						InputLabelProps={{
-							shrink: true,
-						}}
-					/>
-
+					<Button
+						className={classes.btns}
+						// onClick={() => {
+						// 	goal();
+						// 	refreshPage();
+						// }}
+						>
+						Add Food Item
+					</Button>
 					<br></br>
-
+					<br></br>
 					<Button
 						className={classes.btns}
 						onClick={() => {
 							goal();
 							refreshPage();
 						}}>
-						Set Goal
+						Create Menu
 					</Button>
 				</div>
 			</CardContent>

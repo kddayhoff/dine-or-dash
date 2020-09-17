@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Calendar from '../Calendar';
+// import Calendar from '../Calendar';
 import { UserContext } from '../libs/UserContext';
 import Goal from '../Goal';
 import GoalCard from '../GoalCard';
@@ -44,21 +44,20 @@ export default function Dashboard() {
 			<Grid container spacing={3}>
 				<Grid item xs={12}>
 					<Paper className={classes.paper}>
-						Welcome To Achieve 2 Believe, an application to keep yourself
-						accountable and organized in terms of your goals and dreams<hr></hr>
+						Dine Or Dash: Order it, eat it, remember it<hr></hr>
 					</Paper>
 				</Grid>
 				<UserContext.Provider value={{}}>
 					<Grid item xs={12} sm={6}>
 						<Paper className={classes.paper}>
 							{/* the magnificent calendar */}
-							<Calendar />
+							{/* <Calendar /> */}
 						</Paper>
 					</Grid>
 
 					{/* Need to render the goal input inside the following grid item so it renders beside the calendar on the page */}
 					<Grid item xs={12} sm={6}>
-						<Paper className={classes.paper}>Goal Stuff || information</Paper>
+						<Paper className={classes.paper}>Diner's Choice</Paper>
 						<Paper className={classes.paper}>
 							<Goal getGoals={getGoals} />
 						</Paper>
