@@ -46,9 +46,6 @@ export default function GoalCard(props) {
 					{props.task}
 					<br />
 				</Typography>
-				<Typography className={classes.pos} color='textSecondary'>
-					<Moment>{props.start}</Moment>
-				</Typography>
 			</CardContent>
 			<CardActions>
 				<Button size='small'>Edit Menu</Button>
