@@ -4,8 +4,8 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 // import Calendar from '../Calendar';
 import { UserContext } from '../libs/UserContext';
-import Goal from '../Goal';
-import GoalCard from '../GoalCard';
+import Goal from '../CreateMenu';
+import GoalCard from '../MenuCard';
 import Axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
