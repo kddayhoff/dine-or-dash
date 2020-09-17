@@ -1,0 +1,11 @@
+
+.togglePassword{
+    padding: 4px;
+    margin-top: 15px;
+}
+
+  .togglePassword:hover {
+    color: #32408f;
+    cursor: pointer;
+
+  }
