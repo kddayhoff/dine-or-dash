@@ -12,7 +12,7 @@ router
 	.post(passport.authenticate('local'), usersController.login);
 
 //Allows a user to get their info (goals and tasks), , delete should allow a user to delete a specific goal, unable to delete specific tasks at the moment
-router.route('/dashboard/menus').get(usersController.findGoals);
+router.route('/dashboard/menus').get(usersController.findMenus);
 
 router.route('/dashboard').post(menuController.create);
 //.post will allow users to create a goal that pushes to their unique user id

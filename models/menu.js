@@ -8,7 +8,7 @@ const menuSchema = new Schema({
 	start: { type: Date, default: Date.now },
 });
 
-goalSchema.plugin(passportLocalMongoose);
+menuSchema.plugin(passportLocalMongoose);
 const Menu = mongoose.model('Menu', menuSchema);
 
 module.exports = Menu;

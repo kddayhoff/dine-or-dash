@@ -70,10 +70,10 @@ function Login() {
 
 return (
   <Card className={classes.root}>
-    {loggedin ? <Redirect to={{pathname:"/dashboard/goals"}}/> : null}
+    {loggedin ? <Redirect to={{pathname:"/dashboard/menus"}}/> : null}
     <CardContent>
       <Typography className={classes.title} color="textSecondary">
-        Welcome back to Achieve 2 Believe!!! Login to check in on your goals!
+        Welcome back to Dine Or Dash! Remember where you loved to dine and where you wish you had dashed.
       </Typography>
 
       <form className={classes.form}>

@@ -5,10 +5,10 @@ const bcrypt = require('bcryptjs');
 // Defining methods for the usersController
 module.exports = {
 	// finds user by unique id and populates page with goals and tasks
-	findMenuss: (req, res) => {
+	findMenus: (req, res) => {
 		db.User.findById(req.user._id)
-			.select('menus')
-			.populate('menus')
+			.select('goals')
+			.populate('goals')
 			// .populate("tasks")
 			.then((dbModel) => {
 				res.json(dbModel);
