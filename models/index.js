@@ -1,4 +1,4 @@
 module.exports = {
-	Goal: require('./goal'),
+	Goal: require('./menu'),
 	User: require('./user'),
 };

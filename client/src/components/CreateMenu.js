@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
-import TextField from '@material-ui/core/TextField';
+// import TextField from '@material-ui/core/TextField';
 import Axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
@@ -50,24 +50,24 @@ function refreshPage() {
 	window.location.reload(true);
 }
 
-export default function Goal(props) {
+export default function Menu(props) {
 	const classes = useStyles();
 
-	const [postGoal, setGoal] = useState('');
-	const [postTask, setTask] = useState('');
-	const [postDate, setDate] = useState('');
+	const [postMenu, setMenu] = useState('');
+	const [postFood, setFood] = useState('');
+	// const [postDate, setDate] = useState('');
 
-	const goal = () => {
+	const menu = () => {
 		Axios({
 			method: 'POST',
 			data: {
-				title: postGoal,
-				task: postTask,
-				start: postDate,
+				menu: postMenu,
+				food: postFood,
+				// start: postDate,
 			},
 			withCredentials: true,
 			url: '/dashboard',
-		}).then((res) => props.getGoals());
+		}).then((res) => props.getMenus());
 	};
 
 	return (
@@ -86,7 +86,7 @@ export default function Goal(props) {
 								<InputLabel htmlFor='component-outlined'>Restaurant</InputLabel>
 								<OutlinedInput
 									id='component-outlined'
-									onChange={(e) => setGoal(e.target.value)}
+									onChange={(e) => setMenu(e.target.value)}
 									label='restaurant'
 								/>
 							</FormControl>
@@ -98,7 +98,7 @@ export default function Goal(props) {
 								<InputLabel htmlFor='component-outlined'>Food Item</InputLabel>
 								<OutlinedInput
 									id='component-outlined'
-									onChange={(e) => setTask(e.target.value)}
+									onChange={(e) => setFood(e.target.value)}
 									label='food item'
 								/>
 							</FormControl>
@@ -120,7 +120,7 @@ export default function Goal(props) {
 					<Button
 						className={classes.btns}
 						onClick={() => {
-							goal();
+							menu();
 							refreshPage();
 						}}>
 						Create Menu

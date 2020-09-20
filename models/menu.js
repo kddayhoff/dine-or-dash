@@ -2,15 +2,15 @@ const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
 const Schema = mongoose.Schema;
 
-const goalSchema = new Schema({
-	title: { type: String, required: true },
-	task: String,
+const menuSchema = new Schema({
+	menu: { type: String, required: true },
+	food: String,
 	start: { type: Date, default: Date.now },
 });
 
 goalSchema.plugin(passportLocalMongoose);
-const Goal = mongoose.model('Goal', goalSchema);
+const Menu = mongoose.model('Menu', menuSchema);
 
-module.exports = Goal;
+module.exports = Menu;
 
 ///can make a model of tasks as an empty array and populate user with tasks along with goals

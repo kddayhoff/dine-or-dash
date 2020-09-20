@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
 // import Calendar from '../Calendar';
 import { UserContext } from '../libs/UserContext';
-import Goal from '../CreateMenu';
-import GoalCard from '../MenuCard';
+import Menu from '../CreateMenu';
+import MenuCard from '../MenuCard';
 import Axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
@@ -13,31 +14,32 @@ const useStyles = makeStyles((theme) => ({
 		flexGrow: 1,
 	},
 	paper: {
-		padding: theme.spacing(2),
-		textAlign: 'center',
+		
+		textAlign: 'left',
+
 	},
 }));
 
 export default function Dashboard() {
 	const classes = useStyles();
 
-	const [goals, setGoals] = useState([]);
+	const [menus, setMenus] = useState([]);
 
-	const getGoals = () => {
+	const getMenus= () => {
 		Axios({
 			method: 'GET',
 			withCredentials: true,
-			url: '/dashboard/goals',
+			url: '/dashboard/menus',
 		})
 			.then((res) => {
 				console.log(res.data);
-				setGoals(res.data.goals);
+				setMenus(res.data.menus);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
 	};
-	useEffect(getGoals, []);
+	useEffect(getMenus, []);
 
 	return (
 		<div className={classes.root}>
@@ -57,21 +59,23 @@ export default function Dashboard() {
 
 					{/* Need to render the goal input inside the following grid item so it renders beside the calendar on the page */}
 					<Grid item xs={12} sm={6}>
+						<Card>
 						<Paper className={classes.paper}>Diner's Choice</Paper>
 						<Paper className={classes.paper}>
-							<Goal getGoals={getGoals} />
+							<Menu getMenus={getMenus} />
 						</Paper>
 						{
 							///////Map goal card instead prop down into goal card  - props.goal and props.task; in side goal card opening tag,
 						}
-						{goals.map((goal) => (
-							<GoalCard
+						{menus.map((menu) => (
+							<MenuCard
 								className={classes.paper}
-								key={goal._id}
-								title={goal.title}
-								task={goal.task}
-								start={goal.start}></GoalCard>
+								key={menu._id}
+								title={menu.menu}
+								task={menu.food}
+								start={menu.start}></MenuCard>
 						))}
+						</Card>
 					</Grid>
 				</UserContext.Provider>
 			</Grid>

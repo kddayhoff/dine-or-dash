@@ -1,7 +1,7 @@
 const passport = require('passport');
 const router = require('express').Router();
 const usersController = require('../controllers/usersController');
-const goalsController = require('../controllers/goalsController');
+const menuController = require('../controllers/menuController');
 
 //this will allow a new user to register their info//email and password that is then hashed/encrypted
 router.route('/signup').post(usersController.signup);
@@ -12,12 +12,12 @@ router
 	.post(passport.authenticate('local'), usersController.login);
 
 //Allows a user to get their info (goals and tasks), , delete should allow a user to delete a specific goal, unable to delete specific tasks at the moment
-router.route('/dashboard/goals').get(usersController.findGoals);
+router.route('/dashboard/menus').get(usersController.findGoals);
 
-router.route('/dashboard').post(goalsController.create);
+router.route('/dashboard').post(menuController.create);
 //.post will allow users to create a goal that pushes to their unique user id
 
-router.route('/dashboard/goal/:id').delete(goalsController.delete);
+router.route('/dashboard/menus/:id').delete(menuController.delete);
 
 router.route('/user').get(usersController.getUser);
 
