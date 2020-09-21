@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const menuSchema = new Schema({
 	menu: { type: String, required: true },
 	food: String,
-	start: { type: Date, default: Date.now },
+	// start: { type: Date, default: Date.now },
 });
 
 menuSchema.plugin(passportLocalMongoose);

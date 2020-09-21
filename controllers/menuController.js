@@ -11,7 +11,7 @@ module.exports = {
 			console.log(_id);
 			const dbModel = await db.User.findByIdAndUpdate(
 				req.user._id,
-				{ $push: { menus: _id } },
+				{ $push: { menu: _id } },
 				{ new: true }
 			);
 			console.log('dbModel:', dbModel);
