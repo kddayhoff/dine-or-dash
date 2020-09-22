@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     background: '#60534c',
     color: '#faf0d9',
     fontFamily: fontText,
+    fontWeight: 'bold',
     height: 35,
     fontSize: 15,
     margin: 20
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     height: 35,
     fontSize: 15,
     fontFamily: fontText,
+    fontWeight: 'bold',
     margin: 20
   }
 }));

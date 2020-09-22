@@ -18,7 +18,8 @@ import { useForm } from "react-hook-form";
 const styles = {
   cardBackground: {
     background: "#fadb6a",
-    align: 'center'
+    align: 'center',
+    margin: 20
   },
   header: {
     fontFamily: "Shrikhand, cursive",
@@ -39,14 +40,18 @@ const styles = {
   },
   submitBtn: {
     fontFamily: "Raleway, sans-serif",
+    textTransfor: 'capitalize',
     background: '#60534c',
     color: '#faf0d9',
+    fontWeight: 'bold',
     height: 35,
     fontSize: 15
   },
   input: {
     fontFamily: "Raleway, sans-serif",
-    background: 'white'
+    background: 'white',
+    border: 10,
+    borderColor:'#a7ada'
   }
 }
 
@@ -89,7 +94,7 @@ return (
       </Typography>
 
       <form >
-      <FormControl variant="outlined">
+      <FormControl style={styles.input} variant="outlined">
         <InputLabel style={styles.input} htmlFor="component-outlined">username</InputLabel>
         <OutlinedInput style={styles.input}
         name="username"
