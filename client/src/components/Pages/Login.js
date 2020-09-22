@@ -19,7 +19,9 @@ const styles = {
   cardBackground: {
     background: "#fadb6a",
     align: 'center',
-    margin: 20
+    margin: 20,
+    border: 'solid',
+    borderColor: '#a7ada6'
   },
   header: {
     fontFamily: "Shrikhand, cursive",
