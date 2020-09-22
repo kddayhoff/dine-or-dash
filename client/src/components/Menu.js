@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
-import TextField from '@material-ui/core/TextField';
 import Axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
@@ -55,15 +54,14 @@ export default function Goal(props) {
 
 	const [postGoal, setGoal] = useState('');
 	const [postTask, setTask] = useState('');
-	const [postDate, setDate] = useState('');
+	
 
 	const goal = () => {
 		Axios({
 			method: 'POST',
 			data: {
 				title: postGoal,
-				task: postTask,
-				start: postDate,
+				task: postTask
 			},
 			withCredentials: true,
 			url: '/dashboard',

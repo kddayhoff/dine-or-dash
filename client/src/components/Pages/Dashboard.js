@@ -4,8 +4,8 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 // import Calendar from '../Calendar';
 import { UserContext } from '../libs/UserContext';
-import Goal from '../Goal';
-import GoalCard from '../GoalCard';
+import Menu from '../Menu';
+import MenuCard from '../MenuCard';
 import Axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
@@ -44,7 +44,7 @@ export default function Dashboard() {
 			<Grid container spacing={3}>
 				<Grid item xs={12}>
 					<Paper className={classes.paper}>
-						Dine Or Dash: Order it, eat it, remember it<hr></hr>
+						Dine Or Dash: Order it, eat it, never forget it<hr></hr>
 					</Paper>
 				</Grid>
 				<UserContext.Provider value={{}}>
@@ -59,18 +59,18 @@ export default function Dashboard() {
 					<Grid item xs={12} sm={6}>
 						<Paper className={classes.paper}>Diner's Choice</Paper>
 						<Paper className={classes.paper}>
-							<Goal getGoals={getGoals} />
+							<Menu getGoals={getGoals} />
 						</Paper>
 						{
 							///////Map goal card instead prop down into goal card  - props.goal and props.task; in side goal card opening tag,
 						}
 						{goals.map((goal) => (
-							<GoalCard
+							<MenuCard
 								className={classes.paper}
 								key={goal._id}
 								title={goal.title}
 								task={goal.task}
-								start={goal.start}></GoalCard>
+								start={goal.start}></MenuCard>
 						))}
 					</Grid>
 				</UserContext.Provider>

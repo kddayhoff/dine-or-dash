@@ -17,7 +17,7 @@ export default function Footer() {
       flexGrow: 1,
     },
     footer: {
-      background: 'linear-gradient(45deg, #3f51b5 10%, #32408f 90%)',
+      background: '#a0cbd8',
       color: 'black',
       height: 48,
       paddingTop: '10px',

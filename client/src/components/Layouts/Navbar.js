@@ -7,29 +7,38 @@ import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
 import Axios from 'axios';
 import { Redirect} from "react-router-dom";
+import "./index.css"
+
+const fontText =  "Paytone One, sans-serif";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   nav: {
-    background: 'linear-gradient(45deg, #3f51b5 10%, #32408f 90%)',
+    background: '#a0cbd8',
   },
   title: {
     flexGrow: 1,
   },
   btns: {
-    background: 'linear-gradient(45deg, #3f51b5 10%, #32408f 90%)',
-    color: 'black',
+    background: '#60534c',
+    color: '#faf0d9',
+    fontFamily: fontText,
     height: 35,
-    fontSize: 20
+    fontSize: 20,
+    margin: 20
   },
   btn1:{
-    background: 'linear-gradient(45deg, #32408f 10%,  #3f51b5 90%)',
-    color: 'black',
+    background: '#60534c',
+    color: '#faf0d9',
     height: 35,
-    fontSize: 20
+    fontSize: 20,
+    fontFamily: fontText
   }
 }));
+
+
 
 
 export default function Navbar() {
@@ -59,7 +68,7 @@ const logout = () => {
             <Link style={{ textDecoration: 'none' }} to ={"/dashboard"}><Button className={classes.btn1}>Dine or Dash</Button></Link>
           </Typography>
           <Link style={{ textDecoration: 'none' }} to="/">
-          <Button className={classes.btns}>Log In</Button></Link>
+          <Button className={`'btnFont' ${classes.btns} `}>Log In</Button></Link>
           <Link style={{ textDecoration: 'none' }} to="/logout">
           <Button className={classes.btns} onClick={logout}>Log Out</Button></Link>
         </Toolbar>

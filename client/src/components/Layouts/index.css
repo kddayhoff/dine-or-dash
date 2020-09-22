@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Asap:wght@500&family=Bangers&family=Comfortaa:wght@500&family=Fredoka+One&family=Galada&family=Lobster&family=Monoton&family=Montserrat&family=Nunito:wght@600&family=Oleo+Script:wght@400;700&family=Paytone+One&family=Raleway&family=Roboto&family=Shrikhand&family=Varela+Round&display=swap');
 /* font-family: 'Abril Fatface', cursive;
 font-family: 'Asap', sans-serif;
@@ -15,16 +16,4 @@ font-family: 'Raleway', sans-serif;
 font-family: 'Roboto', sans-serif;
 font-family: 'Shrikhand', cursive;
 font-family: 'Varela Round', sans-serif; */
-.togglePassword{
-    padding: 4px;
-    margin-top: 15px;
-}
 
-  .togglePassword:hover {
-    color: #32408f;
-    cursor: pointer;
-
-  }
-body{
-  font-family: 'Shrikhand', cursive;
-}

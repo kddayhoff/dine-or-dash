@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -14,37 +15,30 @@ import "./login.css"
 import { useForm } from "react-hook-form";
 // import Signup from '../Signup';
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-    textAlign:'center',
-    justifyContent: 'center'
+const styles = {
+  pgBackground: {
+    background: "#fadb6a",
+    align: 'center'
   },
-  title: {
-    fontSize: 22,
-    padding: 30,
+  header: {
+    fontFamily: "Shrikhand, cursive",
+    fontSize: 40,
+    text: 'center',
+    display: 'block',
+    
   },
-  btns: {
-    background: 'linear-gradient(45deg, #3f51b5 30%, #32408f 90%)',
-    color: 'black',
-    height: 35,
-    fontSize: 20
-  },
-  images:{
-    flexDirection:'column'
-  },
-  body: {
-    paddingTop: 20,
-  },
-  form: {
-    padding: 20,
-    paddingRight:0,
+  subheader: {
+    fontFamily: "Shrikhand, cursive",
+    fontSize: 20,
+    text: 'center',
+    
   }
+}
 
-});
+
 
 function Login() {
-  const classes= useStyles();
+  // const classes= useStyles();
   const { register} = useForm();
   const [loginUsername, setLoginUsername] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
@@ -69,14 +63,17 @@ function Login() {
 }
 
 return (
-  <Card className={classes.root}>
+  <Container style={styles.pgBackground} maxWidth="sm" >
+  <Card >
     {loggedin ? <Redirect to={{pathname:"/dashboard/goals"}}/> : null}
     <CardContent>
-      <Typography className={classes.title} color="textSecondary">
-        Welcome back to Achieve 2 Believe!!! Login to check in on your goals!
+      <Typography style={styles.header} >
+        Dine Or Dash:
+      </Typography>
+      <Typography style={styles.subheader}>Order it, eat it, never forget it! 
       </Typography>
 
-      <form className={classes.form}>
+      <form >
       <FormControl variant="outlined">
         <InputLabel htmlFor="component-outlined">username</InputLabel>
         <OutlinedInput
@@ -104,16 +101,17 @@ return (
       <Visibility className="togglePassword" onClick={togglePasswordVisiblity}/>
       </form>
 
-      <Button className= {classes.btns} onClick={login}>Submit </Button> 
+      <Button onClick={login}>Submit </Button> 
    
-              <div className={classes.body}>
+              <div >
                 Not already a member? <Link 
                 style={{textDecoration: 'none'}} 
                 to= "/Signup">
-                  <Button className={classes.btns}>Sign Up</Button></Link>
+                  <Button>Sign Up</Button></Link>
                 </div>
     </CardContent>
   </Card>
+  </Container>
 );
 
 

@@ -9,7 +9,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import Moment from 'react-moment';
+// import Moment from 'react-moment';
 // import FormLabel from '@material-ui/core/FormLabel';
 
 const useStyles = makeStyles({
@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 	},
 });
 
-export default function GoalCard(props) {
+export default function MenuCard(props) {
 	const classes = useStyles();
 
 
@@ -47,7 +47,7 @@ export default function GoalCard(props) {
 					<br />
 				</Typography>
 				<Typography className={classes.pos} color='textSecondary'>
-					<Moment>{props.start}</Moment>
+					{/* <Moment>{props.start}</Moment> */}
 				</Typography>
 			</CardContent>
 			<CardActions>
