@@ -63,7 +63,6 @@ function Login() {
 }
 
 return (
-<<<<<<< HEAD
   <Container style={styles.pgBackground} maxWidth="sm" >
   <Card >
     {loggedin ? <Redirect to={{pathname:"/dashboard/goals"}}/> : null}
@@ -72,13 +71,6 @@ return (
         Dine Or Dash:
       </Typography>
       <Typography style={styles.subheader}>Order it, eat it, never forget it! 
-=======
-  <Card className={classes.root}>
-    {loggedin ? <Redirect to={{pathname:"/dashboard/menus"}}/> : null}
-    <CardContent>
-      <Typography className={classes.title} color="textSecondary">
-        Welcome back to Dine Or Dash! Remember where you loved to dine and where you wish you had dashed.
->>>>>>> 6d06c3ce70fad085fa258dc41845bcde83f6adbc
       </Typography>
 
       <form >
