@@ -19,9 +19,10 @@ const styles = {
   cardBackground: {
     background: "#fadb6a",
     align: 'center',
-    margin: 20,
+    margin: 30,
     border: 'solid',
-    borderColor: '#a7ada6'
+    borderWidth: 20,
+    borderColor: '#A0340B'
   },
   header: {
     fontFamily: "Shrikhand, cursive",
@@ -53,7 +54,8 @@ const styles = {
     fontFamily: "Raleway, sans-serif",
     background: 'white',
     border: 10,
-    borderColor:'#a7ada'
+    borderColor:'#a7ada',
+   margin: 1
   }
 }
 
@@ -96,7 +98,7 @@ return (
       </Typography>
 
       <form >
-      <FormControl style={styles.input} variant="outlined">
+      <FormControl variant="outlined">
         <InputLabel style={styles.input} htmlFor="component-outlined">username</InputLabel>
         <OutlinedInput style={styles.input}
         name="username"

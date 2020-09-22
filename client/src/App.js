@@ -7,10 +7,18 @@ import Login from './components/Pages/Login';
 import Signup from './components/Signup';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+const styles = {
+	app: {
+	  background: "#6b724e",
+	  backgroundSize: "100%"
+	  
+	}
+}
+
 function App() {
 	return (
 		<>
-			<div className='App'>
+			<div className='App'style={styles.app}>
 				<React.Fragment>
 					<Router>
 						<CssBaseline />
