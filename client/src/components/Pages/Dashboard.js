@@ -21,23 +21,23 @@ const useStyles = makeStyles((theme) => ({
 export default function Dashboard() {
 	const classes = useStyles();
 
-	const [menus, setMenus] = useState([]);
+	const [goals, setGoals] = useState([]);
 
-	const getMenus = () => {
+	const getGoals = () => {
 		Axios({
 			method: 'GET',
 			withCredentials: true,
-			url: '/dashboard/menus',
+			url: '/dashboard/goals',
 		})
 			.then((res) => {
 				console.log(res.data);
-				setMenus(res.data.menus);
+				setGoals(res.data.goals);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
 	};
-	useEffect(getMenus, []);
+	useEffect(getGoals, []);
 
 	return (
 		<div className={classes.root}>
