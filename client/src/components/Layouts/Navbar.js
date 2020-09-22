@@ -9,7 +9,7 @@ import Axios from 'axios';
 import { Redirect} from "react-router-dom";
 import "./index.css"
 
-const fontText =  "Paytone One, sans-serif";
+const fontText =  "Raleway, sans-serif";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,15 +26,16 @@ const useStyles = makeStyles((theme) => ({
     color: '#faf0d9',
     fontFamily: fontText,
     height: 35,
-    fontSize: 20,
+    fontSize: 15,
     margin: 20
   },
   btn1:{
     background: '#60534c',
     color: '#faf0d9',
     height: 35,
-    fontSize: 20,
-    fontFamily: fontText
+    fontSize: 15,
+    fontFamily: fontText,
+    margin: 20
   }
 }));
 
@@ -65,12 +66,13 @@ const logout = () => {
       <AppBar className={classes.nav} position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link style={{ textDecoration: 'none' }} to ={"/dashboard"}><Button className={classes.btn1}>Dine or Dash</Button></Link>
+            
+            <Link style={{ textDecoration: 'none' }} to ={"/dashboard"}><Button variant="contained" className={classes.btn1}>My Menus</Button></Link>
           </Typography>
           <Link style={{ textDecoration: 'none' }} to="/">
-          <Button className={`'btnFont' ${classes.btns} `}>Log In</Button></Link>
+          <Button variant="contained" className={`'btnFont' ${classes.btns} `}>Log In</Button></Link>
           <Link style={{ textDecoration: 'none' }} to="/logout">
-          <Button className={classes.btns} onClick={logout}>Log Out</Button></Link>
+          <Button variant="contained" className={classes.btns} onClick={logout}>Log Out</Button></Link>
         </Toolbar>
       </AppBar>
     </div>

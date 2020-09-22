@@ -16,22 +16,37 @@ import { useForm } from "react-hook-form";
 // import Signup from '../Signup';
 
 const styles = {
-  pgBackground: {
+  cardBackground: {
     background: "#fadb6a",
     align: 'center'
   },
   header: {
     fontFamily: "Shrikhand, cursive",
-    fontSize: 40,
+    fontSize: 50,
     text: 'center',
     display: 'block',
     
   },
   subheader: {
     fontFamily: "Shrikhand, cursive",
+    fontSize: 30,
+    text: 'center',
+  },
+  subheader2: {
+    fontFamily: "Shrikhand, cursive",
     fontSize: 20,
     text: 'center',
-    
+  },
+  submitBtn: {
+    fontFamily: "Raleway, sans-serif",
+    background: '#60534c',
+    color: '#faf0d9',
+    height: 35,
+    fontSize: 15
+  },
+  input: {
+    fontFamily: "Raleway, sans-serif",
+    background: 'white'
   }
 }
 
@@ -63,8 +78,8 @@ function Login() {
 }
 
 return (
-  <Container style={styles.pgBackground} maxWidth="sm" >
-  <Card >
+  <Container maxWidth="sm" >
+  <Card style={styles.cardBackground}>
     {loggedin ? <Redirect to={{pathname:"/dashboard/goals"}}/> : null}
     <CardContent>
       <Typography style={styles.header} >
@@ -75,8 +90,8 @@ return (
 
       <form >
       <FormControl variant="outlined">
-        <InputLabel htmlFor="component-outlined">username</InputLabel>
-        <OutlinedInput
+        <InputLabel style={styles.input} htmlFor="component-outlined">username</InputLabel>
+        <OutlinedInput style={styles.input}
         name="username"
         type="text"
         label="username"
@@ -86,8 +101,8 @@ return (
       </FormControl>
 
       <FormControl variant="outlined">
-        <InputLabel htmlFor="component-outlined">password</InputLabel>
-        <OutlinedInput
+        <InputLabel style={styles.input} htmlFor="component-outlined">password</InputLabel>
+        <OutlinedInput style={styles.input}
           name="password"
           type={passwordShown ? "text" : "password"}
           label="password"
@@ -100,14 +115,16 @@ return (
      
       <Visibility className="togglePassword" onClick={togglePasswordVisiblity}/>
       </form>
+      <br></br>
 
-      <Button onClick={login}>Submit </Button> 
-   
-              <div >
+      <Button variant="contained" style={styles.submitBtn} onClick={login}>Log In</Button> 
+      <br></br>
+      <br></br>
+              <div style={styles.subheader2} >
                 Not already a member? <Link 
                 style={{textDecoration: 'none'}} 
                 to= "/Signup">
-                  <Button>Sign Up</Button></Link>
+                  <Button variant="contained" style={styles.submitBtn}>Sign Up</Button></Link>
                 </div>
     </CardContent>
   </Card>
