@@ -105,7 +105,7 @@ return (
     {loggedin ? <Redirect to={{pathname:"/dashboard/goals"}}/> : null}
     <CardContent>
       <Typography style={styles.header} >
-        Dine Or Dash:
+        Dine-Or-Dash:
       </Typography>
       <Typography style={styles.subheader}>Order it, eat it, never forget it! 
       </Typography>

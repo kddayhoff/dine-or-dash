@@ -44,10 +44,17 @@ const styles = {
     textAlign: "center",
     color: brown,
   },
-  subheader: {
+  foodItem: {
     fontFamily: sansSerifFont,
     fontSize: 20,
     textAlign: "left",
+    // color: '#6D4504'
+  },
+  delivery: {
+    fontFamily: sansSerifFont,
+    fontSize: 25,
+	textAlign: "left",
+	margin: 2
     // color: '#6D4504'
   },
   submitBtn: {
@@ -89,11 +96,11 @@ export default function MenuCard(props) {
       <Card style={styles.cardBackground}>
         <CardContent>
           <h1 style={styles.header}>{props.title}</h1>
-		  <h2 style={styles.subheader}>Delivery Service:</h2>
+		  <h2 style={styles.delivery}>Delivery Service:</h2>
 		  {/* {props.delivery} */}
           <Grid container spacing={2}>
             <Grid item xs>
-              <h2 style={styles.subheader}>{props.task}</h2>
+              <h2 style={styles.foodItem}>{props.task}</h2>
             </Grid>
 
             <Grid item xs={2}>
