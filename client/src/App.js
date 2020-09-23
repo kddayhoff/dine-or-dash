@@ -10,8 +10,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 const styles = {
 	app: {
 	  background: "#6b724e",
-	  backgroundSize: "100%"
-	  
+	  backgroundSize: "100%",
+	  border: 'solid',
+	  borderBottomWidth: 150,
+	  borderColor: "#6B724e"
 	}
 }
 
@@ -22,7 +24,7 @@ function App() {
 				<React.Fragment>
 					<Router>
 						<CssBaseline />
-						<Navbar />
+						<Navbar  />
 
 						<Route path='/dashboard/' component={Dashboard} />
 						<Route exact path='/signup' component={Signup} />

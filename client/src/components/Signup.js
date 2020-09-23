@@ -12,7 +12,7 @@ import { useForm } from "react-hook-form";
 import {Visibility} from "@material-ui/icons";
 import Axios from 'axios';
 
-const useStyles = makeStyles({
+const styles = {
   root: {
     minWidth: 275,
     justifyContent: 'center'
@@ -26,10 +26,13 @@ const useStyles = makeStyles({
     fontsyle: 'italic'
   },
   btns: {
-    background: 'linear-gradient(45deg, #3f51b5 30%, #32408f 90%)',
-    color: 'black',
+    fontFamily: "Raleway, sans-serif",
+    
+    background: '#60534c',
+    color: '#faf0d9',
+    fontWeight: 'bold',
     height: 35,
-    fontSize: 20
+    fontSize: 15
   },
   images:{
     flexDirection:'column'
@@ -41,10 +44,10 @@ const useStyles = makeStyles({
     padding: 20,
     paddingRight:0,
   }
-});
+};
 
 export default function Signup() {
-	const classes = useStyles();
+	
   const { register } = useForm();
   const [signupUsername, setsignupUsername] = useState('');
   const [signupPassword, setsignupPassword] = useState('');
@@ -68,10 +71,10 @@ export default function Signup() {
   };
   
   return (
-    <Card className={classes.root}>
+    <Card style={styles.root}>
       {signedIn ? <Redirect to={{pathname:"/"}}/> : null}
-      <CardContent className={classes.card}>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
+      <CardContent style={styles.card}>
+        <Typography style={styles.title} gutterBottom>
           Signup
         </Typography>
         <form>
@@ -98,7 +101,7 @@ export default function Signup() {
         />
       </FormControl>
       <Visibility className="togglePassword" onClick={togglePasswordVisiblity}/>
-            <Button className= {classes.btns} onClick={signup}>Submit{' '} </Button>
+            <Button style={styles.btns} onClick={signup}>Submit{' '} </Button>
         </Typography>
         </form>
       </CardContent>

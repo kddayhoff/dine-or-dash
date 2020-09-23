@@ -15,7 +15,12 @@ import "./login.css"
 import { useForm } from "react-hook-form";
 // import Signup from '../Signup';
 
+const btnColor = '#704911'
+
 const styles = {
+  container: {
+    background: "#6b724e"
+  },
   cardBackground: {
     background: "#fadb6a",
     align: 'center',
@@ -43,8 +48,7 @@ const styles = {
   },
   submitBtn: {
     fontFamily: "Raleway, sans-serif",
-    textTransfor: 'capitalize',
-    background: '#60534c',
+    background: btnColor,
     color: '#faf0d9',
     fontWeight: 'bold',
     height: 35,
@@ -87,7 +91,7 @@ function Login() {
 }
 
 return (
-  <Container maxWidth="sm" >
+  <Container style={styles.container} maxWidth="sm" >
   <Card style={styles.cardBackground}>
     {loggedin ? <Redirect to={{pathname:"/dashboard/goals"}}/> : null}
     <CardContent>

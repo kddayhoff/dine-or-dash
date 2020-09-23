@@ -10,19 +10,20 @@ import { Redirect} from "react-router-dom";
 import "./index.css"
 
 const fontText =  "Raleway, sans-serif";
+const btnColor = '#704911'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   nav: {
-    background: '#a0cbd8',
+    background: '#a0cbd8'
   },
   title: {
     flexGrow: 1,
   },
   btns: {
-    background: '#60534c',
+    background: btnColor,
     color: '#faf0d9',
     fontFamily: fontText,
     fontWeight: 'bold',
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 20
   },
   btn1:{
-    background: '#60534c',
+    background: btnColor,
     color: '#faf0d9',
     height: 35,
     fontSize: 15,
