@@ -17,7 +17,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   nav: {
-    background: '#a0cbd8'
+    background: '#a0cbd8',
+    position: 'fixed',
+    marginBottom: 50,
+    marginTop: -5
   },
   title: {
     flexGrow: 1,
