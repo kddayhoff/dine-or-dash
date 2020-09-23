@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+import clsx from "clsx";
+import { makeStyles } from "@material-ui/core/styles";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -14,140 +14,138 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import Axios from "axios";
-import "./Layouts/index.css"
+import "./Layouts/index.css";
 
-const btnColor = '#6D4504'
+const btnColor = "#6D4504";
 // const cursiveFont = 'Shrikhand, cursive'
-const sansSerifFont = 'Raleway, sans-serif'
+const sansSerifFont = "Raleway, sans-serif";
 
-const red = "#A0340B"
-const yellow = "#fadb6a"
-const green = "#6b724e"
-const brown = "#6D4504"
-const blue = "#a0cbd8"
+const red = "#A0340B";
+const yellow = "#fadb6a";
+const green = "#6b724e";
+const brown = "#6D4504";
+const blue = "#a0cbd8";
 
 const styles = {
   container: {
-    background: "#6b724e"
+    background: "#6b724e",
   },
   cardBackground: {
     background: yellow,
-    align: 'center',
+    align: "center",
     marginTop: 20,
-    border: 'solid',
+    border: "solid",
     borderWidth: 10,
-    borderColor: red
+    borderColor: red,
   },
   header: {
     fontFamily: sansSerifFont,
     fontSize: 33,
-    textAlign: 'center',
+    textAlign: "center",
     // color: '#6D4504',
-    fontWeight: 'extra bold'
-    
+    fontWeight: "extra bold",
   },
   subheader: {
     fontFamily: sansSerifFont,
     fontSize: 28,
-    textAlign: 'left',
-    fontWeight: 'extra bold'
+    textAlign: "left",
+    fontWeight: "extra bold",
     // color: '#6D4504'
   },
   subheader2: {
     fontFamily: sansSerifFont,
     fontSize: 22,
-    textAlign: 'left',
-    fontWeight: 'extra bold'
+    textAlign: "left",
+    fontWeight: "extra bold",
     // color: '#6D4504'
   },
   deliveryOptions: {
     fontFamily: sansSerifFont,
     fontSize: 25,
-    text: 'center',
+    text: "center",
   },
   foodItemBtn: {
     fontFamily: sansSerifFont,
     background: btnColor,
-    color: '#faf0d9',
-    fontWeight: 'bold',
+    color: "#faf0d9",
+    fontWeight: "bold",
     height: 35,
     fontSize: 15,
     margin: 10,
-    
   },
   createMenuBtn: {
     fontFamily: sansSerifFont,
     background: btnColor,
-    color: '#faf0d9',
-    fontWeight: 'bold',
+    color: "#faf0d9",
+    fontWeight: "bold",
     height: 35,
     fontSize: 15,
     margin: 10,
-    alignItems: 'center'
+    alignItems: "center",
   },
   input: {
     fontFamily: sansSerifFont,
-    background: 'white',
-  
-   margin: 1,
-   align: 'center',
-   borderRadius: 5,
-   border: 'solid',
-     borderColor: yellow,
-    borderWidth: 3
+    background: "white",
+
+    margin: 1,
+    align: "center",
+    borderRadius: 5,
+    border: "solid",
+    borderColor: yellow,
+    borderWidth: 3,
   },
   input2: {
     fontFamily: sansSerifFont,
-    background: 'white',
-   margin: 1,
-   align: 'center',
-   
-   
-  }
-}
+    background: "white",
+    margin: 1,
+    align: "center",
+  },
+};
 
 // radio customization
 const useStyles = makeStyles({
   root: {
-    '&:hover': {
-      backgroundColor: 'transparent',
+    "&:hover": {
+      backgroundColor: "transparent",
     },
   },
   icon: {
-    borderRadius: '50%',
+    borderRadius: "50%",
     width: 16,
     height: 16,
-    boxShadow: 'inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)',
-    backgroundColor: '#f5f8fa',
-    backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))',
-    '$root.Mui-focusVisible &': {
-      outline: '2px auto rgba(19,124,189,.6)',
+    boxShadow:
+      "inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)",
+    backgroundColor: "#f5f8fa",
+    backgroundImage:
+      "linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))",
+    "$root.Mui-focusVisible &": {
+      outline: "2px auto rgba(19,124,189,.6)",
       outlineOffset: 2,
     },
-    'input:hover ~ &': {
-      backgroundColor: '#ebf1f5',
+    "input:hover ~ &": {
+      backgroundColor: "#ebf1f5",
     },
-    'input:disabled ~ &': {
-      boxShadow: 'none',
-      background: 'rgba(206,217,224,.5)',
+    "input:disabled ~ &": {
+      boxShadow: "none",
+      background: "rgba(206,217,224,.5)",
     },
   },
   checkedIcon: {
-    backgroundColor: '#a0340b',
-    backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',
-    '&:before': {
-      display: 'block',
+    backgroundColor: "#a0340b",
+    backgroundImage:
+      "linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))",
+    "&:before": {
+      display: "block",
       width: 16,
       height: 16,
-      backgroundImage: 'radial-gradient(#fff,#fff 28%,transparent 32%)',
+      backgroundImage: "radial-gradient(#fff,#fff 28%,transparent 32%)",
       content: '""',
     },
-    'input:hover ~ &': {
-      backgroundColor: '#106ba3',
+    "input:hover ~ &": {
+      backgroundColor: "#106ba3",
     },
   },
 });
-
 
 function StyledRadio(props) {
   const classes = useStyles();
@@ -163,20 +161,18 @@ function StyledRadio(props) {
     />
   );
 }
-  
 
 function refreshPage() {
   window.location.reload(true);
 }
 
 export default function Goal(props) {
-  
   const classes = useStyles();
 
   const [postGoal, setGoal] = useState("");
   const [postTask, setTask] = useState("");
   const [value, setValue] = React.useState("delivery");
-  
+
   const goal = () => {
     Axios({
       method: "POST",
@@ -195,102 +191,130 @@ export default function Goal(props) {
 
   return (
     <Container>
-    <Card style={styles.cardBackground}>
-      <CardContent>
-        <h1 style={styles.header}>Create New Dine-or-Dash Menu:</h1>
-        <div>
-          <form>
-            <FormControl component="fieldset">
-              <h2 style={styles.subheader}>Delivery Service</h2>
-              <RadioGroup 
-                aria-label="deliveryService"
-                name="delivery"
-                value={value}
-                onChange={handleChange}
+      <Card style={styles.cardBackground}>
+        <CardContent>
+          <h1 style={styles.header}>Create New Dine-or-Dash Menu:</h1>
+          <div>
+            <form>
+              <FormControl component="fieldset">
+                <h2 style={styles.subheader}>Delivery Service</h2>
+                <RadioGroup
+                  aria-label="deliveryService"
+                  name="delivery"
+                  value={value}
+                  onChange={handleChange}
+                >
+                  <FormControlLabel
+                    value="doordash"
+                    control={<StyledRadio />}
+                    label={
+                      <Typography style={styles.deliveryOptions}>
+                        Doordash
+                      </Typography>
+                    }
+                  />
+                  <FormControlLabel
+                    value="grubhub"
+                    control={<StyledRadio />}
+                    label={
+                      <Typography style={styles.deliveryOptions}>
+                        Grubhub
+                      </Typography>
+                    }
+                  />
+                  <FormControlLabel
+                    value="ubereats"
+                    control={<StyledRadio />}
+                    label={
+                      <Typography style={styles.deliveryOptions}>
+                        UberEats
+                      </Typography>
+                    }
+                  />
+                  <FormControlLabel
+                    value="postmates"
+                    control={<StyledRadio />}
+                    label={
+                      <Typography style={styles.deliveryOptions}>
+                        Postmates
+                      </Typography>
+                    }
+                  />
+                  <FormControlLabel
+                    value="seamless"
+                    control={<StyledRadio />}
+                    label={
+                      <Typography style={styles.deliveryOptions}>
+                        Seamless
+                      </Typography>
+                    }
+                  />
+                  <FormControlLabel
+                    value="instacart"
+                    control={<StyledRadio />}
+                    label={
+                      <Typography style={styles.deliveryOptions}>
+                        Instacart
+                      </Typography>
+                    }
+                  />
+                </RadioGroup>
+              </FormControl>
+              <h2 style={styles.subheader}>Enter Restaurant Name:</h2>
+              <FormControl style={styles.input} variant="outlined">
+                <InputLabel style={styles.input2} htmlFor="component-outlined">
+                  Restaurant
+                </InputLabel>
+                <OutlinedInput
+                  id="component-outlined"
+                  onChange={(e) => setGoal(e.target.value)}
+                  label="restaurant"
+                />
+              </FormControl>
+            </form>
+            <form>
+              <h2 style={styles.subheader2}>Add Food To Your Menu:</h2>
+
+              <FormControl style={styles.input} variant="outlined">
+                <InputLabel style={styles.input2} htmlFor="component-outlined">
+                  Food Item
+                </InputLabel>
+                <OutlinedInput
+                  id="component-outlined"
+                  onChange={(e) => setTask(e.target.value)}
+                  label="food item"
+                />
+              </FormControl>
+            </form>
+
+            <Button
+              variant="contained"
+              style={styles.foodItemBtn}
+
+              // onClick={() => {
+              // 	goal();
+              // 	refreshPage();
+              // }}
+            >
+              Add Food Item
+            </Button>
+            <br></br>
+            <div align="center" justify="center">
+              <Button
+                variant="contained"
+                align="center"
+                style={styles.createMenuBtn}
+                onClick={() => {
+                  goal();
+                  refreshPage();
+                }}
               >
-                <FormControlLabel 
-                  value="doordash"
-                  control={<StyledRadio />}
-                  label={<Typography style={styles.deliveryOptions}>Doordash</Typography>}
-                  
-                />
-                <FormControlLabel
-                  value="grubhub"
-                  control={<StyledRadio />}
-                  label={<Typography style={styles.deliveryOptions}>Grubhub</Typography>}
-                />
-                <FormControlLabel
-                  value="ubereats"
-                  control={<StyledRadio />}
-                  label={<Typography style={styles.deliveryOptions}>UberEats</Typography>}
-                />
-                <FormControlLabel
-                  value="postmates"
-                  control={<StyledRadio />}
-                  label={<Typography style={styles.deliveryOptions}>Postmates</Typography>}
-                />
-                <FormControlLabel
-                  value="seamless"
-                  control={<StyledRadio />}
-                  label={<Typography style={styles.deliveryOptions}>Seamless</Typography>}
-                />
-                <FormControlLabel
-                  value="instacart"
-                  control={<StyledRadio />}
-                  label={<Typography style={styles.deliveryOptions}>Instacart</Typography>}
-                />
-              </RadioGroup>
-            </FormControl>
-            <h2 style={styles.subheader}>Enter Restaurant Name:</h2>
-            <FormControl style={styles.input} variant="outlined">
-              <InputLabel style={styles.input2}   htmlFor="component-outlined">Restaurant</InputLabel>
-              <OutlinedInput
-                id="component-outlined"
-                onChange={(e) => setGoal(e.target.value)}
-                label="restaurant"
-              />
-            </FormControl>
-          </form>
-          <form>
-            <h2 style={styles.subheader2}>Add Food To Your Menu:</h2>
-
-            <FormControl style={styles.input} variant="outlined">
-              <InputLabel style={styles.input2}  htmlFor="component-outlined">Food Item</InputLabel>
-              <OutlinedInput
-                id="component-outlined"
-                onChange={(e) => setTask(e.target.value)}
-                label="food item"
-              />
-            </FormControl>
-          </form>
-
-          
-          <Button
-            variant="contained" style={styles.foodItemBtn}
-
-            // onClick={() => {
-            // 	goal();
-            // 	refreshPage();
-            // }}
-          >
-            Add Food Item
-          </Button>
-         <br></br>
-         <div align = "center" justify = "center">
-          <Button
-            variant="contained" align='center' style={styles.createMenuBtn}
-            onClick={() => {
-              goal();
-              refreshPage();
-            }}
-            
-          >
-            Create Menu
-          </Button>
+                Create Menu
+              </Button>
+            </div>
           </div>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
     </Container>
   );
 }

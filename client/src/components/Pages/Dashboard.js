@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 // import Calendar from '../Calendar';
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 
 import { UserContext } from "../libs/UserContext";
 import CreateMenu from "../CreateMenu";
@@ -17,31 +17,36 @@ import Axios from "axios";
 const btnColor = '#6D4504'
 const cursiveFont = 'Shrikhand, cursive'
 const sansSerifFont = 'Raleway, sans-serif'
+const red = "#A0340B";
+const yellow = "#fadb6a";
+const green = "#6b724e";
+const brown = "#6D4504";
+const blue = "#a0cbd8";
 
 const styles = {
   container: {
-    background: "#6b724e"
+    background: green
   },
   cardBackground: {
-    background: "#fadb6a",
+    background: yellow,
     align: 'center',
     marginTop: 100,
     border: 'solid',
     borderWidth: 20,
-    borderColor: '#A0340B'
+    borderColor: red
   },
   header: {
     fontFamily: cursiveFont,
     fontSize: 50,
     textAlign: 'center',
-    color: '#6D4504'
+    color: brown
     
   },
   subheader: {
     fontFamily: cursiveFont,
     fontSize: 30,
     textAlign: 'center',
-    color: '#6D4504'
+    color: brown
   },
   subheader2: {
     fontFamily: cursiveFont,
@@ -51,7 +56,7 @@ const styles = {
   submitBtn: {
     fontFamily: sansSerifFont,
     background: btnColor,
-    color: '#faf0d9',
+    color: brown,
     fontWeight: 'bold',
     height: 35,
     fontSize: 15
@@ -63,22 +68,18 @@ const styles = {
     borderColor:'#a7ada',
    margin: 1,
    align: 'center'
-  }
-}
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(2),
     textAlign: "center",
-    color: theme.palette.text.secondary,
+	
+	backgroundColor: green,
+	border: 'none'
   },
-}));
+}
+
 
 export default function Dashboard() {
-  const classes = useStyles();
+
   const [goals, setGoals] = useState([]);
 
   const getGoals = () => {
@@ -102,7 +103,7 @@ export default function Dashboard() {
       <UserContext.Provider value={{}}>
         <Card style={styles.cardBackground}>
           <CardContent>
-            <Typography style={styles.header}>Dine Or Dash:</Typography>
+            <Typography style={styles.header}>Dine-Or-Dash:</Typography>
             <Typography style={styles.subheader}>
               Order it, eat it, never forget it!
             </Typography>
@@ -111,10 +112,10 @@ export default function Dashboard() {
 
         <Grid container spacing={3}>
           <Grid item xs>
-            <CreateMenu getGoals={getGoals} className={classes.paper} />
+            <CreateMenu getGoals={getGoals}  />
           </Grid>
           <Grid item xs={6}>
-            <Paper className={classes.paper}>
+            
               {goals.map((goal) => (
                 <MenuCard
                   style={styles.paper}
@@ -124,7 +125,7 @@ export default function Dashboard() {
                   start={goal.start}
                 ></MenuCard>
               ))}
-            </Paper>
+            
           </Grid>
         </Grid>
       </UserContext.Provider>

@@ -7,13 +7,19 @@ import Login from './components/Pages/Login';
 import Signup from './components/Signup';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+const red = "#A0340B";
+const yellow = "#fadb6a";
+const green = "#6b724e";
+const brown = "#6D4504";
+const blue = "#a0cbd8";
+
 const styles = {
 	app: {
-	  background: "#6b724e",
+	  background: green,
 	  backgroundSize: "100%",
 	  border: 'solid',
 	  borderBottomWidth: 200,
-	  borderColor: "#6B724e"
+	  borderColor: green
 	}
 }
 
