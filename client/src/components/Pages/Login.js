@@ -15,39 +15,47 @@ import "./login.css"
 import { useForm } from "react-hook-form";
 // import Signup from '../Signup';
 
-const btnColor = '#704911'
+const btnColor = '#6D4504'
+const red = "#A0340B"
+const yellow = "#fadb6a"
+const green = "#6b724e"
+const brown = "#6D4504"
+const blue = "#a0cbd8"
+const cursiveFont = 'Shrikhand, cursive'
+const sansSerifFont = 'Raleway, sans-serif'
 
 const styles = {
   container: {
-    background: "#6b724e"
+    background: green
   },
   cardBackground: {
-    background: "#fadb6a",
+    background: yellow,
     align: 'center',
-    margin: 30,
+    marginTop: 100,
     border: 'solid',
     borderWidth: 20,
-    borderColor: '#A0340B'
+    borderColor: red
   },
   header: {
-    fontFamily: "Shrikhand, cursive",
+    fontFamily: cursiveFont,
     fontSize: 50,
-    text: 'center',
-    display: 'block',
+    textAlign: 'center',
+    color: brown
     
   },
   subheader: {
-    fontFamily: "Shrikhand, cursive",
+    fontFamily: cursiveFont,
     fontSize: 30,
-    text: 'center',
+    textAlign: 'center',
+    color: brown
   },
   subheader2: {
-    fontFamily: "Shrikhand, cursive",
+    fontFamily: cursiveFont,
     fontSize: 20,
     text: 'center',
   },
   submitBtn: {
-    fontFamily: "Raleway, sans-serif",
+    fontFamily: sansSerifFont,
     background: btnColor,
     color: '#faf0d9',
     fontWeight: 'bold',
@@ -55,11 +63,12 @@ const styles = {
     fontSize: 15
   },
   input: {
-    fontFamily: "Raleway, sans-serif",
+    fontFamily: sansSerifFont,
     background: 'white',
     border: 10,
     borderColor:'#a7ada',
-   margin: 1
+   margin: 1,
+   align: 'center'
   }
 }
 

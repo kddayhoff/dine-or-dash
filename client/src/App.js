@@ -12,7 +12,7 @@ const styles = {
 	  background: "#6b724e",
 	  backgroundSize: "100%",
 	  border: 'solid',
-	  borderBottomWidth: 150,
+	  borderBottomWidth: 200,
 	  borderColor: "#6B724e"
 	}
 }
