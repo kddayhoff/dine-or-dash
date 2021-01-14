@@ -18,7 +18,7 @@ const styles = {
 	  background: green,
 	  backgroundSize: "100%",
 	  border: 'solid',
-	  borderBottomWidth: 200,
+	  borderBottomWidth: 1000,
 	  borderColor: green
 	}
 }
